@@ -1,0 +1,109 @@
+H3_Options:
+  resolution: 9
+  city_buffer_ring: 7
+
+GeoVex:
+  radius: 7
+  embedding_file: "${oc.env:CARGO_BIKE_ROOT}/data/geovex/embeddings.parquet"
+  embedding_file_cropped: "${oc.env:CARGO_BIKE_ROOT}/data/geovex/embeddings_cropped.parquet"
+  cluster_file: "${oc.env:CARGO_BIKE_ROOT}/data/geovex/clusters_4.parquet"
+
+ServiceTime:
+  - name: "brussels"
+    file: "${oc.env:CARGO_BIKE_ROOT}/data/service_time/brussels_service_time.parquet"
+    service_time_col: "total_stop_time"
+    city:
+      - ${Cities[4]}
+
+  - name: "london"
+    file: "${oc.env:CARGO_BIKE_ROOT}/data/service_time/london_service_time.parquet"
+    service_time_col: "total_stop_time"
+    city:
+      - ${Cities[5]}
+
+  - name: "amazon"
+    file: "${oc.env:CARGO_BIKE_ROOT}/data/service_time/amazon_service_time.parquet"
+    service_time_col: "planned_service_time"
+    almrcc_download_path: "${oc.env:CARGO_BIKE_ROOT}/data/tmp/"
+    city:
+      - ${Cities[0]}
+      - ${Cities[1]}
+      - ${Cities[2]}
+      - ${Cities[3]}
+
+Cities:
+  - name: "Boston, USA"
+    data_folder: "${oc.env:CARGO_BIKE_ROOT}/data/osm/boston"
+    boundary_file: "${.data_folder}/boston_boundary.geojson"
+    h3_file: "${.data_folder}/boston_h3.parquet"
+    count_file: "${.data_folder}/boston_count.parquet"
+    pbf_files: "${.data_folder}/pbf/"
+    pop_file: "${oc.env:CARGO_BIKE_ROOT}/data/population/boston/boston_population_hex.parquet"
+
+  - name: "Chicago, USA"
+    data_folder: "${oc.env:CARGO_BIKE_ROOT}/data/osm/chicago"
+    boundary_file: "${.data_folder}/chicago_boundary.geojson"
+    h3_file: "${.data_folder}/chicago_h3.parquet"
+    count_file: "${.data_folder}/chicago_count.parquet"
+    pbf_files: "${.data_folder}/pbf/"
+    pop_file: "${oc.env:CARGO_BIKE_ROOT}/data/population/chicago/chicago_population_hex.parquet"
+
+  - name: "Seattle, USA"
+    data_folder: "${oc.env:CARGO_BIKE_ROOT}/data/osm/seattle"
+    boundary_file: "${.data_folder}/seattle_boundary.geojson"
+    h3_file: "${.data_folder}/seattle_h3.parquet"
+    count_file: "${.data_folder}/seattle_count.parquet"
+    pbf_files: "${.data_folder}/pbf/"
+    pop_file: "${oc.env:CARGO_BIKE_ROOT}/data/population/seattle/seattle_population_hex.parquet"
+
+  - name: "Austin, USA"
+    osm_name: "Austin, TX, USA"
+    data_folder: "${oc.env:CARGO_BIKE_ROOT}/data/osm/austin"
+    boundary_file: "${.data_folder}/austin_boundary.geojson"
+    h3_file: "${.data_folder}/austin_h3.parquet"
+    count_file: "${.data_folder}/austin_count.parquet"
+    pbf_files: "${.data_folder}/pbf/"
+    pop_file: "${oc.env:CARGO_BIKE_ROOT}/data/population/austin/austin_population_hex.parquet"
+
+  - name: "London, UK"
+    osm_name: "Greater London, UK"
+    data_folder: "${oc.env:CARGO_BIKE_ROOT}/data/osm/london"
+    boundary_file: "${.data_folder}/london_postcode_boundary.geojson"
+    h3_file: "${.data_folder}/london_h3.parquet"
+    count_file: "${.data_folder}/london_count.parquet"
+    pbf_files: "${.data_folder}/pbf/"
+    pop_file: "${oc.env:CARGO_BIKE_ROOT}/data/population/london/london_population_hex.parquet"
+
+  - name: "Brussels, Belgium"
+    osm_name: "Brussels-Capital, Belgium"
+    data_folder: "${oc.env:CARGO_BIKE_ROOT}/data/osm/brussels"
+    boundary_file: "${.data_folder}/brussels_boundary.geojson"
+    h3_file: "${.data_folder}/brussels_h3.parquet"
+    count_file: "${.data_folder}/brussels_count.parquet"
+    pbf_files: "${.data_folder}/pbf/"
+    pop_file: "${oc.env:CARGO_BIKE_ROOT}/data/population/brussels/brussels_population_hex.parquet"
+
+Tags:
+  tag_file: "${oc.env:CARGO_BIKE_ROOT}/data/osm_tags/all_tags.json"
+  keep_tags:
+    - name: "amenity"
+      problem_tags:
+        - "waste_basket"
+    - name: "building"
+    - name: "healthcare"
+    - name: "highway"
+    - name: "historic"
+      problem_tags:
+        - "tomb"
+    - name: "landuse"
+      problem_tags:
+        - "grass"
+    - name: "leisure"
+    - name: "office"
+    - name: "public"
+    - name: "railway"
+    - name: "shop"
+    - name: "sport"
+    - name: "water"
+    - name: "waterway"
+    - name: "public_transport"

@@ -1,0 +1,25 @@
+,city,cluster,centroid_h3
+0,"Austin, USA",0,89489e265d7ffff
+1,"Austin, USA",1,89489eace2fffff
+2,"Austin, USA",2,89489e35a87ffff
+3,"Austin, USA",3,89489e25003ffff
+4,"Boston, USA",0,892a30648afffff
+5,"Boston, USA",1,892a30663a3ffff
+6,"Boston, USA",2,892a30664a7ffff
+7,"Boston, USA",3,892a3064097ffff
+8,"Brussels, Belgium",0,891fa44e417ffff
+9,"Brussels, Belgium",1,891fa441b5bffff
+10,"Brussels, Belgium",2,891fa44f2d7ffff
+11,"Brussels, Belgium",3,891fa44f193ffff
+12,"Chicago, USA",0,892664cf527ffff
+13,"Chicago, USA",1,892664562abffff
+14,"Chicago, USA",2,892664cdc93ffff
+15,"Chicago, USA",3,89266456683ffff
+16,"London, UK",0,89194ad358bffff
+17,"London, UK",1,89195da686bffff
+18,"London, UK",2,89194e69693ffff
+19,"London, UK",3,89194ad2ebbffff
+20,"Seattle, USA",0,8928d542507ffff
+21,"Seattle, USA",1,8928d5452b3ffff
+22,"Seattle, USA",2,8928d547653ffff
+23,"Seattle, USA",3,8928d55016bffff
