@@ -13,7 +13,7 @@ ServiceTime:
     file: "${oc.env:CARGO_BIKE_ROOT}/data/service_time/brussels_service_time.parquet"
     service_time_col: "total_stop_time"
     city:
-      - ${Cities[4]}
+      - ${Cities[6]}
 
   - name: "london"
     file: "${oc.env:CARGO_BIKE_ROOT}/data/service_time/london_service_time.parquet"
@@ -30,6 +30,7 @@ ServiceTime:
       - ${Cities[1]}
       - ${Cities[2]}
       - ${Cities[3]}
+      - ${Cities[4]}
 
 Cities:
   - name: "Boston, USA"

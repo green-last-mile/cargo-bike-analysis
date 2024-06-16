@@ -70,6 +70,19 @@ OPT_PARAMS_SUB_TAGS = {
     "reg_lambda": 0.005644030899765208,
 }
 
+OPT_SEATTLE_PARAMS_SUB_TAGS = {
+    "eta": 0.09891020223707622,
+    "max_depth": 2,
+    "gamma": 0.001200877235925647,
+    "subsample": 0.9985738759698634,
+    "colsample_bytree": 0.9995962164883357,
+    "colsample_bylevel": 0.8216638556397792,
+    "min_child_weight": 160.94522508684165,
+    "booster": "gbtree",
+    "tree_method": "hist",
+    "reg_lambda": 9.408130727505625,
+    "opt_rounds": 152,
+}
 
 N_BOOSTS = 1500
 
